@@ -1,0 +1,185 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/montserrat.woff') format('woff'),
+        url('../assets/fonts/montserrat.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/fraunces.woff') format('woff'),
+        url('../assets/fonts/fraunces.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* VARIABLES */
+
+:root {
+    --color-white: #FFFFFF;
+    --color-cream-bg: #F2EAE2;
+    --color-aurometal: #6C7289;
+    --color-deep-aquamarine: #3D8168;
+    --color-deep-aquamarine-hover: #1A4032;
+    --color-gunmetal: #1C232B;
+
+    --font-montserrat: 'Montserrat';
+    --font-fraunces: 'Fraunces';
+
+    --font-size-small: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 32px;
+
+    --font-weight-normal: 500;
+    --font-weight-bold: 700;
+
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+    --spacing-xlarge: 32px;
+}
+
+/* RESETS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.page {
+    background-color: var(--color-cream-bg);
+    display: grid;
+    place-content: center;
+    height: 100svh;
+}
+
+.product-card {
+    width: 343px;
+    height: 611px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--spacing-large);
+    gap: var(--spacing-large);
+}
+
+.product-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.product-card__category,
+.product-card__description {
+    font-family: var(--font-montserrat);
+    color: var(--color-aurometal);
+}
+
+.product-card__category {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product-card__title {
+    color: var(--color-gunmetal);
+    font-family: var(--font-fraunces);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+}
+
+.product-card__description {
+    font-size: var(--font-size-medium);
+    line-height: 1.6;
+}
+
+.product-card__price {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.product-card__price--current {
+    color: var(--color-deep-aquamarine);
+    font-family: var(--font-fraunces);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+}
+
+.product-card__price--previous {
+    color: var(--color-aurometal);
+    font-family: var(--font-montserrat);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.6;
+    text-decoration: line-through;
+}
+
+.product-card__button {
+    background-color: var(--color-deep-aquamarine);
+    color: var(--color-white);
+    font-family: var(--font-montserrat);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-small);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    border-radius: 8px;
+    border: none;
+    padding: var(--spacing-medium);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.product-card__button:hover {
+    background-color: var(--color-deep-aquamarine-hover);
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+
+    .product-card {
+        width: 600px;
+        height: 450px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .product-card__info {
+        gap: var(--spacing-medium);
+    }
+
+    .product-card__content {
+        padding: var(--spacing-xlarge);
+        gap: 30px;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .product-card__image {
+        height: 100%;
+    }
+}
